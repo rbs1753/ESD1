@@ -1,0 +1,29 @@
+/# ---------------------------------------------------------------
+# Assembly language program that displays a 0 on hex displays
+# and displays it on the LEDs.
+# ---------------------------------------------------------------
+
+.text
+
+# define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+# define constants
+.equ Switches, 0x11010    #find the base address of Switches in the system.h file
+.equ Keys,     0x11010    #find the base address of Keys in the system.h file
+.equ Hex0,     0x11000    #find the base address of Keys in the system.h file
+
+#Define the main program
+.global main
+main: 	#load r2, r3, r4 with the addresses
+  movia r2, Switches
+  movia r3, Keys
+  movia r4, Hex0
+
+loop: 	#set 
+  ldw r4, 0xA0
+  br    loop
