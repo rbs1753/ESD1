@@ -1,0 +1,7 @@
+
+State Machine - |Lab4|servo_controller:functional|current_state
+Name current_state.int_L current_state.sweep_L current_state.int_R current_state.sweep_R 
+current_state.sweep_R 0 0 0 0 
+current_state.int_R 0 0 1 1 
+current_state.sweep_L 0 1 0 1 
+current_state.int_L 1 0 0 1 

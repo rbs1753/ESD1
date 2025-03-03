@@ -1,0 +1,13 @@
+S:/ESD_1/lab__work/Lab_4/servo_tb.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none S:/ESD_1/lab__work/Lab_4/servo_tb.vhd
+Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity servo_tb
+-- Compiling architecture model of servo_tb
+** Warning: S:/ESD_1/lab__work/Lab_4/servo_tb.vhd(32): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}}
