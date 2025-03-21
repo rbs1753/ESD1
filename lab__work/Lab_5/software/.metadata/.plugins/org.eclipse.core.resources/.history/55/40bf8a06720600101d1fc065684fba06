@@ -1,0 +1,112 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 19, 2025
+ *      Author: rbs1753
+ */
+
+
+#include "io.h"
+#include <stdio.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+
+//set up pointers to peripherals to talk to IRQs
+uint32* Hex0Ptr              =    (uint32*)HEX0_BASE;
+uint32* Hex1Ptr              =    (uint32*)HEX1_BASE;
+uint32* Hex2Ptr              =    (uint32*)HEX2_BASE;
+uint32* Hex3Ptr              =    (uint32*)HEX3_BASE;
+uint32* Hex4Ptr              =    (uint32*)HEX4_BASE;
+uint32* Hex5Ptr              =    (uint32*)HEX5_BASE;
+uint32* KeyPtr               =    (uint32*)PUSHBUTTONS_BASE;
+uint32* SwitchPtr            =    (uint32*)SWITCHES_BASE;
+uint32* IPptr                =    (uint32*)CUSTOM_IP_0_BASE;
+
+
+
+//Define the constant to write to interrupt register
+#define Interrupt_offset 2
+#define Interruptmask    3
+
+unsigned char  hexValues[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x18}; //SSD values for 0-9
+
+uint8 button_val = 0; //Variable that reads the button pointer
+uint8 switch_val = 0; //Variable that reads the switches pointer
+uint8 ISR = 0; //Value to see if ISR was run, if so update the LEDs
+
+uint32 min_angle = 45; //Minimum angle value
+uint32 max_angle = 135; //Maximum angle value
+
+
+
+void pushbutton_isr(void *context)
+/****************************************************************************************/
+/*                                                                                      */
+/* Push Button Interrupt Service Routine                                                */
+/* Will update the angle based on what key is pressed, Key 3 for min and Key 4 for max  */
+/*                                                                                      */
+/****************************************************************************************/
+{
+
+	button_val = *(KeyPtr + 3);
+	switch_val = *SwitchPtr;
+
+	if(button_val & 0x08){
+		if(switch_val >= 45){
+			min_angle = switch_val;
+		}
+	}
+	else if(button_val & 0x04){
+		if(switch_val <= 135){
+			max_angle = switch_val;
+		}
+	}
+	 *(KeyPtr + Interruptmask) &= ~0x02;//Clears IRQ flag
+}
+
+void IRQ_isr(void *context){
+/*****************************************************************************************/
+/*                                                                                       */
+/* Custom IP Interrupt Service Routine                                                   */
+/* Will wait until sweep is complete, then write values to the min and max angle values  */
+/*                                                                                       */
+/*****************************************************************************************/
+
+	*(IPptr + 0) = min_angle; //The Min angle register is at IP base address, offset 0
+	*(IPptr + 1) = max_angle; //The Max angle register is at IP base address, offset
+	ISR = 1;
+}
+
+void main(void){
+	*Hex0Ptr = 0xFF; //Set all LEDs to blank
+	*Hex1Ptr = 0xFF;
+	*Hex2Ptr = 0xFF;
+	*Hex3Ptr = 0xFF;
+	*Hex4Ptr = 0xFF;
+	*Hex5Ptr = 0xFF;
+	*(KeyPtr +  Interrupt_offset) |= 0x0C;
+	alt_ic_isr_register(PUSHBUTTONS_IRQ_INTERRUPT_CONTROLLER_ID,PUSHBUTTONS_IRQ,pushbutton_isr,0,0);
+	alt_ic_isr_register(CUSTOM_IP_0_IRQ_INTERRUPT_CONTROLLER_ID,CUSTOM_IP_0_IRQ,IRQ_isr,0,0);
+	while(1){
+		if(ISR == 1){
+		*Hex0Ptr = hexValues[(max_angle%10)];
+		*Hex1Ptr = hexValues[((max_angle%100)/10)];
+		*Hex2Ptr = hexValues[(max_angle/100)];
+
+		*Hex4Ptr = hexValues[((max_angle%100)/10)];
+		*Hex5Ptr = hexValues[(max_angle%10)];
+		}
+	}
+}

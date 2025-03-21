@@ -1,0 +1,30 @@
+13:41:26 **** Incremental Build of configuration Nios II for project Lab5 ****
+make all 
+Info: Building ../Lab5_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab5_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab5_bsp//HAL/inc -I../Lab5_bsp/ -I../Lab5_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+main.c:92:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(void){
+      ^
+Info: Linking Lab5.elf
+nios2-elf-g++  -T'../Lab5_bsp//linker.x' -msys-crt0='../Lab5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab5_bsp/   -Wl,-Map=Lab5.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab5.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert Lab5.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x11080 --timestamp 1742409334 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "S:/ESD_1/lab__work/Lab_5" --jdi ../..//output_files/Lab5.jdi --sopcinfo S:/ESD_1/lab__work/Lab_5/software/Lab5_bsp/../../nios_system.sopcinfo
+Info: (Lab5.elf) 16 KBytes program size (code + initialized data).
+Info:            10044 Bytes free for stack + heap.
+Info: Creating Lab5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab5.elf >Lab5.objdump
+[Lab5 build complete]
+13:41:33 **** Incremental Build of configuration Nios II for project Lab5 ****
+make all 
+Info: Building ../Lab5_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab5_bsp/
+[BSP build complete]
+[Lab5 build complete]
+13:44:39 **** Incremental Build of configuration Nios II for project Lab5 ****
+make all 
+Info: Building ../Lab5_bsp/
+C:/intelFPGA/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab5_bsp/
+[BSP build complete]
+[Lab5 build complete]
