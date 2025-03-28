@@ -17,7 +17,7 @@ Entity servo_controller is
 	);
 	Port(
 	     we         : in std_logic;
-		 addr       : in std_logic;
+		 addr       : in bit;
 		 w_data     : in std_logic_vector(31 downto 0);
 	     clk        : in  std_logic;
 	     reset_n    : in  std_logic;
@@ -42,7 +42,7 @@ signal current_state, next_state : state_type;
 
 
 begin
- sync : process(clk, reset_n) --State transition to clock logic 
+ sync: process(clk, reset_n) --State transition to clock logic 
       begin
         if(reset_n = '0') then -- Active low button
           current_state <= sweep_R;

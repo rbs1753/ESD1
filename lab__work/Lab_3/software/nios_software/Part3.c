@@ -23,10 +23,10 @@ typedef unsigned long   uint32;             // unsigned 32 bit values
 typedef         float   real32;             // 32 bit real values
 
 
-//set up pointers to peripherals
+//set up pointers to peripherals 
 
-uint32* TimerPtr    =  (uint32*)TIMER_0_BASE;
-uint32* KeyIRQ       = (uint32*)PUSHBUTTONS_BASE;
+uint32* TimerPtr     =  (uint32*)TIMER_0_BASE;
+uint32* KeyIRQ       =  (uint32*)PUSHBUTTONS_BASE;
 
 
 //All Base values are from the system.h file!
