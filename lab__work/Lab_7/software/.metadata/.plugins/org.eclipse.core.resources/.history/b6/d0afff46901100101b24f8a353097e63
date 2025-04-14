@@ -1,0 +1,113 @@
+/*
+ * Lab7.c
+ *
+ *  Created on: Apr 4, 2025
+ *      Author: rbs1753
+ */
+
+
+#include "io.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+
+// create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+uint32* LedPtr = (uint32*)LEDS_BASE;
+uint32* KeyPtr = (uint32*)KEY1_BASE;
+uint32* RAMPtr = (uint32*)INFERRED_RAM_BE_0_BASE;
+
+//Define the constant to write to interrupt register
+#define Interrupt_offset 2
+#define Interruptmask    3
+
+
+void RAMTest (uint32 test_address, uint32 test_size, uint32 test_data){
+	uint32 ram_data = 0;
+
+	for(int i = 0; i < test_size; i++){//write values
+		*(RAMPtr + (test_address + i)) = (test_data);
+	}
+
+	for(int i = 0; i < test_size; i++){//read and turn on leds if wrong values
+		ram_data = *(RAMPtr + (test_address + i));
+		if(ram_data != test_data){
+			printf("ERROR: Address: 0x%08X",test_address + i, " Read: 0x%08X", ram_data, " Expected: 0x%08", test_data);
+			*LedPtr |= 0x7F;
+			break;
+		}
+		else{
+			*LedPtr |= 0x00;
+		}
+
+	}
+}
+
+
+void key_isr(void *context){
+	exit(0);
+}
+
+void RAMTest16 (uint16 test_address, uint16 test_size, uint16 test_data){
+	uint16 ram_data = 0;
+
+	for(int i = 0; i < test_size; i++){//write values
+		*(RAMPtr + (test_address + i)) = (test_data);
+	}
+
+	for(int i = 0; i < test_size; i++){//read and turn on leds if wrong values
+		ram_data = *(RAMPtr + (test_address + i));
+		if(ram_data != test_data){
+			*LedPtr |= 0x7F;
+			printf("ERROR: Address: 0x%08u",test_address + i, " Read: 0x%08X", ram_data, " Expected: 0x%08", test_data);
+			break;
+		}
+		else{
+			*LedPtr |= 0x00;
+		}
+
+	}
+}
+
+void RAMTest8 (uint8 test_address, uint16 test_size, uint8 test_data){
+	uint8 ram_data = 0;
+
+	for(int i = 0; i < test_size; i++){//write values
+		*(RAMPtr + (test_address + i)) = (test_data);
+	}
+
+	for(int i = 0; i < test_size; i++){//read and turn on leds if wrong values
+		ram_data = *(RAMPtr + (test_address + i));
+		if(ram_data != test_data){
+			*LedPtr |= 0x7F;
+			printf("ERROR: Address: 0x%08X",test_address + i, " Read: 0x%08X", ram_data, " Expected: 0x%08", test_data);
+			break;
+		}
+		else{
+			*LedPtr |= 0x00;
+		}
+
+	}
+}
+
+void main(void){
+
+	alt_ic_isr_register(KEY1_IRQ_INTERRUPT_CONTROLLER_ID,KEY1_IRQ,key_isr,0,0);
+	*(KeyPtr +  Interrupt_offset) |= 0x02; //Enable Key1 Interrupt
+	while(1){
+		RAMTest(0, 4096, 0x12345678);
+		RAMTest16(0, 4096, 0x6666);
+		RAMTest8(0, 4096, 0x88);
+	}
+
+}

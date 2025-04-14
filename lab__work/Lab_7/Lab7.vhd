@@ -1,0 +1,50 @@
+-------------------------------------------------------------------------------
+-- Ryan Salmon
+-- Code I definitly did work on, top level for lab 7!
+-- Connects our nios system to our design, run ram tests until interrupted
+-------------------------------------------------------------------------------
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+use work.components.all;
+
+
+
+Entity Lab7 is
+  Port(
+   CLOCK_50  : in std_logic;
+	KEY       : in std_logic_vector(1 downto 0);
+	LEDR      : out std_logic_vector(7 downto 0)
+  );
+End Entity Lab7;
+
+Architecture model of Lab7 is
+------------------- Signal Declaration -------------------
+signal KEY_Sync : std_logic_vector(1 downto 0);
+signal reset_n  : std_logic;
+
+------------------- Process Start ------------------------
+begin
+  sync_keys : synchronizer 
+	generic map( 
+	  size => 2
+	)
+	port map(
+      clk      => CLOCK_50,
+	  reset_n  => '1',
+	  async_in => KEY,
+	  sync_out => KEY_Sync
+	);
+	
+  reset_n <= KEY_Sync(0);
+  
+  u0 : component nios_system
+		port map (
+			clk_clk       => CLOCK_50,       --   clk.clk
+			reset_reset_n => reset_n,        --   reset.reset_n
+			key1_export   => KEY_Sync(1),    --   key1.export
+			leds_export   => LEDR            --   leds.export
+		);
+------------------- Process End -------------------------
+end model;

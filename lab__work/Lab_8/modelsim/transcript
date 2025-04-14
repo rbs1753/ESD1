@@ -1,0 +1,543 @@
+# //  ModelSim SE-64 2019.2 Apr 17 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 12:14:16 on Apr 14,2025
+# vcom -reportprogress 300 -93 -work work ../multi.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multi
+# -- Compiling architecture SYN of multi
+# End time: 12:14:16 on Apr 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 12:14:16 on Apr 14,2025
+# vcom -reportprogress 300 -93 -work work ../dffe.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffe
+# -- Compiling architecture model of dffe
+# End time: 12:14:16 on Apr 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 12:14:16 on Apr 14,2025
+# vcom -reportprogress 300 -93 -work work ../high_pass_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity high_pass_filter
+# -- Compiling architecture model of high_pass_filter
+# End time: 12:14:17 on Apr 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 12:14:17 on Apr 14,2025
+# vcom -reportprogress 300 -93 -work work filter_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity filter_tb
+# -- Compiling architecture model of filter_tb
+# ** Warning: filter_tb.vhd(33): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 12:14:17 on Apr 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -voptargs="+acc" filter_tb 
+# Start time: 12:14:17 on Apr 14,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.filter_tb(model)#1
+# Loading work.high_pass_filter(model)#1
+# Loading work.dff(model)#1
+# Loading work.multi(syn)#1
+# Loading lpm.lpm_components
+# Loading lpm.lpm_hint_evaluation(body)
+# Loading lpm.lpm_mult(lpm_syn)#1
+# ** Warning: (vsim-7) Failed to open VHDL file "output_waveform.csv" in r+ mode.
+# Permission denied. (errno = EACCES)
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+run
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1150 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1200 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1250 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1300 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1350 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1400 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1450 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1500 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1550 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1600 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1650 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1700 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1750 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1800 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1850 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1900 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1950 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 2 us  Iteration: 0  Instance: /filter_tb
+run
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 2050 ns  Iteration: 0  Instance: /filter_tb
+# ** Fatal: (vsim-7) Failed to open VHDL file "output_waveform.csv" in r+ mode.
+# Permission denied. (errno = EACCES)
+#    Time: 2140 ns  Iteration: 0  Process: /filter_tb/stimulus File: filter_tb.vhd
+# Fatal error in ForLoop loop at filter_tb.vhd line 92
+# 
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at filter_tb.vhd 92 ForLoop loop
+# 
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /filter_tb/UUT/Multiplier(0)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(16)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(15)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(14)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(13)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(12)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(11)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(10)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(9)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(8)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(7)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(6)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(5)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(4)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(3)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(2)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /filter_tb/UUT/Multiplier(1)/munchies/lpm_mult_component
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1150 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1200 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1250 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1300 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1350 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1400 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1450 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1500 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1550 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1600 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1650 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1700 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1750 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1800 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1850 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1900 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 1950 ns  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 2 us  Iteration: 0  Instance: /filter_tb
+# ** Warning: NUMERIC_STD.TO_SIGNED: vector truncated
+#    Time: 2050 ns  Iteration: 0  Instance: /filter_tb
+run
+# End time: 12:19:54 on Apr 14,2025, Elapsed time: 0:05:37
+# Errors: 7, Warnings: 102
