@@ -1,0 +1,16 @@
+--------------------------------------------------------------------------------
+-- Ryan Salmon
+-- 4/16/25
+-- Lab 8 top level file, for audio purposes of course ;)
+--------------------------------------------------------------------------------
+
+
+entity audio_filter is
+  Port (clk, reset_n : in std_logic;
+        write : in std_logic;
+        address : in std_logic;
+        writedata : in std_logic_vector(15 downto 0);
+        readdata :out std_logic_vector(15 downto 0)
+        );
+end audio_filter;
+
